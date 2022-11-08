@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Employe_details extends StatefulWidget {
-  const Employe_details({Key? key}) : super(key: key);
+class ManufacturingmanDetails extends StatefulWidget {
+  const ManufacturingmanDetails({Key? key}) : super(key: key);
 
   @override
-  State<Employe_details> createState() => _Employe_detailsState();
+  State<ManufacturingmanDetails> createState() =>
+      _ManufacturingmanDetailsState();
 }
 
-class _Employe_detailsState extends State<Employe_details> {
+class _ManufacturingmanDetailsState extends State<ManufacturingmanDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +84,7 @@ class _Employe_detailsState extends State<Employe_details> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Text("            Mew town area ,Chittagong",
+            child: Text("            013743995723",
                 style: TextStyle(
                     fontSize: 15, fontFamily: "itim", color: Colors.black)),
           ),
@@ -99,121 +100,51 @@ class _Employe_detailsState extends State<Employe_details> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Text("            Mew town area ,Chittagong",
+            child: Text("            013743995723",
                 style: TextStyle(
                     fontSize: 15, fontFamily: "itim", color: Colors.black)),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            alignment: Alignment.center,
-            height: 40,
-            width: 300,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xffF7FAFF)),
-            child: Text(
-              "Montly Sells",
-              style: TextStyle(
-                  fontFamily: "itim", fontSize: 20, color: Colors.black),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          DataTable(columns: [
-            DataColumn(label: Text('Month')),
-            DataColumn(label: Text('Items')),
-          ], rows: [
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-          ]),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            alignment: Alignment.center,
-            height: 40,
-            width: 300,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xffF7FAFF)),
-            child: Text(
-              "Paymnets",
-              style: TextStyle(
-                  fontFamily: "itim", fontSize: 20, color: Colors.black),
-            ),
           ),
           SizedBox(
             height: 10,
           ),
           DataTable(columns: [
             DataColumn(label: Text('Date')),
-            DataColumn(label: Text('Time')),
+            DataColumn(label: Text('Date')),
             DataColumn(label: Text('Money')),
           ], rows: [
             DataRow(cells: [
               DataCell(Text('01-02-2000')),
-              DataCell(Text('10.20pm')),
+              DataCell(Text('15-05-2000')),
               DataCell(Text('8000Tk')),
             ]),
             DataRow(cells: [
               DataCell(Text('01-02-2000')),
-              DataCell(Text('10.20pm')),
+              DataCell(Text('15-05-2000')),
               DataCell(Text('8000Tk')),
             ]),
             DataRow(cells: [
               DataCell(Text('01-02-2000')),
-              DataCell(Text('10.20pm')),
+              DataCell(Text('15-05-2000')),
               DataCell(Text('8000Tk')),
             ]),
             DataRow(cells: [
               DataCell(Text('01-02-2000')),
-              DataCell(Text('10.20pm')),
+              DataCell(Text('15-05-2000')),
               DataCell(Text('8000Tk')),
             ]),
             DataRow(cells: [
               DataCell(Text('01-02-2000')),
-              DataCell(Text('10.20pm')),
+              DataCell(Text('15-05-2000')),
               DataCell(Text('8000Tk')),
             ]),
             DataRow(cells: [
               DataCell(Text('01-02-2000')),
-              DataCell(Text('10.20pm')),
+              DataCell(Text('15-05-2000')),
               DataCell(Text('8000Tk')),
             ]),
             DataRow(cells: [
               DataCell(Text('01-02-2000')),
-              DataCell(Text('10.20pm')),
+              DataCell(Text('15-05-2000')),
               DataCell(Text('8000Tk')),
             ]),
           ]),

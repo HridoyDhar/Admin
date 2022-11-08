@@ -1,8 +1,16 @@
-import 'package:admincode/ChoiceGmail/Choice_gmai.dart';
+import 'package:admincode/Google/google_singin.dart';
 import 'package:admincode/Homepage/Home_page.dart';
+import 'package:admincode/Login/login_user.dart';
+import 'package:admincode/Login/login_user.dart';
+import 'package:admincode/Login/login_user.dart';
 import 'package:admincode/Passwordverify/Password_verification.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
+import 'login_user.dart';
 
 class login_user extends StatefulWidget {
   const login_user({Key? key}) : super(key: key);
@@ -12,6 +20,32 @@ class login_user extends StatefulWidget {
 }
 
 class _login_userState extends State<login_user> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  static Future<User?> loginUsingEmailPassword(
+      {required String email,
+      required String pasword,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+          email: email, password: pasword);
+      user = userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "User-not-found") {
+        print("No user found for that email");
+      }
+    }
+    return user;
+  }
+  // @override
+  // void dispose() {
+  //   emailController.dispose();
+  //   passwordController.dispose();
+  //   super.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +54,8 @@ class _login_userState extends State<login_user> {
         children: [
           SizedBox(height: 20),
           Container(
-            height: 328,
-            width: 375,
+            height: 250,
+            width: 250,
             child: Center(child: Image.asset("assets/Login.gif")),
           ),
           SizedBox(
@@ -32,7 +66,7 @@ class _login_userState extends State<login_user> {
             width: 300.w,
             margin: EdgeInsets.symmetric(horizontal: 20.w),
             child: TextField(
-              // controller: phone,
+              controller: emailController,
               decoration: InputDecoration(
                   labelText: "Email/Number",
                   hintText: "Enter your email or number",
@@ -52,7 +86,7 @@ class _login_userState extends State<login_user> {
             width: 300.w,
             margin: EdgeInsets.symmetric(horizontal: 20.w),
             child: TextField(
-              // controller: password,
+              controller: passwordController,
               decoration: InputDecoration(
                   labelText: "Password",
                   hintText: "Enter your password",
@@ -90,9 +124,15 @@ class _login_userState extends State<login_user> {
             height: 20.h,
           ),
           InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Home_page()));
+            onTap: () async {
+              User? user = await loginUsingEmailPassword(
+                  email: emailController.text,
+                  pasword: passwordController.text,
+                  context: context);
+              if (user != null) {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => Home_page()));
+              }
             },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 110.w),
@@ -114,53 +154,50 @@ class _login_userState extends State<login_user> {
           SizedBox(
             height: 20.h,
           ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Choice_gmail()));
-            },
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.w),
-              height: 40.h,
-              width: 300.w,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(color: Color(0xff35396D))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 20,
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20.w),
+            height: 40.h,
+            width: 300.w,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                border: Border.all(color: Color(0xff35396D))),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                  height: 30,
+                  width: 30,
+                  child: Image.asset("assets/search.png"),
+                ),
+                SizedBox(
+                  width: 15.w,
+                ),
+                Container(
+                  child: Text(
+                    "SingUp with google",
+                    style: TextStyle(
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black),
                   ),
-                  Container(
-                    height: 20,
-                    width: 20,
-                    child: Image.asset("assets/search.png"),
-                  ),
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  Container(
-                    child: Text(
-                      "SingUp with google",
-                      style: TextStyle(
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           SizedBox(
             height: 20.h,
           ),
           InkWell(
-            onTap: () {
+            onTap: (() {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Choice_gmail()));
-            },
+                  MaterialPageRoute(builder: (context) => Home_page()));
+              // final provider =
+              //     Provider.of<googlesinginprovider>(context, listen: false);
+              // provider.login();
+            }),
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20.w),
               height: 40.h,
@@ -175,8 +212,8 @@ class _login_userState extends State<login_user> {
                     width: 20,
                   ),
                   Container(
-                    height: 20,
-                    width: 20,
+                    height: 30,
+                    width: 30,
                     child: Image.asset("assets/facebook.png"),
                   ),
                   SizedBox(

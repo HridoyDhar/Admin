@@ -3,7 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  printing
+  split_screen_menu
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

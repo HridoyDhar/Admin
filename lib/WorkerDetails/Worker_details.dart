@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Employe_details extends StatefulWidget {
-  const Employe_details({Key? key}) : super(key: key);
+class Worker_details extends StatefulWidget {
+  const Worker_details({Key? key}) : super(key: key);
 
   @override
-  State<Employe_details> createState() => _Employe_detailsState();
+  State<Worker_details> createState() => _Worker_detailsState();
 }
 
-class _Employe_detailsState extends State<Employe_details> {
+class _Worker_detailsState extends State<Worker_details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

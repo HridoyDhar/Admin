@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Employe_details extends StatefulWidget {
-  const Employe_details({Key? key}) : super(key: key);
+class Manager_details extends StatefulWidget {
+  const Manager_details({Key? key}) : super(key: key);
 
   @override
-  State<Employe_details> createState() => _Employe_detailsState();
+  State<Manager_details> createState() => _Manager_detailsState();
 }
 
-class _Employe_detailsState extends State<Employe_details> {
+class _Manager_detailsState extends State<Manager_details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,59 +103,6 @@ class _Employe_detailsState extends State<Employe_details> {
                 style: TextStyle(
                     fontSize: 15, fontFamily: "itim", color: Colors.black)),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            alignment: Alignment.center,
-            height: 40,
-            width: 300,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xffF7FAFF)),
-            child: Text(
-              "Montly Sells",
-              style: TextStyle(
-                  fontFamily: "itim", fontSize: 20, color: Colors.black),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          DataTable(columns: [
-            DataColumn(label: Text('Month')),
-            DataColumn(label: Text('Items')),
-          ], rows: [
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('January')),
-              DataCell(Text('3.4b')),
-            ]),
-          ]),
           SizedBox(
             height: 20,
           ),

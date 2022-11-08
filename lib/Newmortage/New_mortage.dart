@@ -1,15 +1,16 @@
+import 'package:admincode/Bigmortge/Big_mortage.dart';
 import 'package:admincode/Homepage/Home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class New_sell extends StatefulWidget {
-  const New_sell({Key? key}) : super(key: key);
+class New_mortage extends StatefulWidget {
+  const New_mortage({Key? key}) : super(key: key);
 
   @override
-  State<New_sell> createState() => _New_sellState();
+  State<New_mortage> createState() => _New_mortageState();
 }
 
-class _New_sellState extends State<New_sell> {
+class _New_mortageState extends State<New_mortage> {
   DateTime currentDate = DateTime.now();
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
@@ -24,6 +25,13 @@ class _New_sellState extends State<New_sell> {
   }
 
   final ScrollController _controller = ScrollController();
+  final TextEditingController Name = TextEditingController();
+  final TextEditingController Address = TextEditingController();
+  final TextEditingController Number = TextEditingController();
+  final TextEditingController Ornamentname = TextEditingController();
+  final TextEditingController Weight = TextEditingController();
+  final TextEditingController Money = TextEditingController();
+
   double _scrollOffset = 0;
 
   // The maximum scroll offset
@@ -75,6 +83,7 @@ class _New_sellState extends State<New_sell> {
           width: 300.w,
           margin: EdgeInsets.symmetric(horizontal: 20),
           child: TextField(
+            controller: Name,
             decoration: InputDecoration(
                 labelText: "Name",
                 hintText: "Enter your name",
@@ -94,6 +103,7 @@ class _New_sellState extends State<New_sell> {
           width: 300.w,
           margin: EdgeInsets.symmetric(horizontal: 20),
           child: TextField(
+            controller: Address,
             decoration: InputDecoration(
                 labelText: "Address",
                 hintText: "Enter your address",
@@ -113,6 +123,7 @@ class _New_sellState extends State<New_sell> {
           width: 300.w,
           margin: EdgeInsets.symmetric(horizontal: 20),
           child: TextField(
+            controller: Number,
             decoration: InputDecoration(
                 labelText: "Number",
                 hintText: "Enter your number",
@@ -139,8 +150,9 @@ class _New_sellState extends State<New_sell> {
                       margin: EdgeInsets.symmetric(horizontal: 20),
                       alignment: Alignment.center,
                       child: TextField(
+                        controller: Ornamentname,
                         decoration: InputDecoration(
-                          labelText: "Name",
+                          labelText: "Ornamentname",
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10)),
                         ),
@@ -367,6 +379,7 @@ class _New_sellState extends State<New_sell> {
                       margin: EdgeInsets.symmetric(horizontal: 20),
                       alignment: Alignment.center,
                       child: TextField(
+                        controller: Weight,
                         decoration: InputDecoration(
                             labelText: "Weight",
                             border: OutlineInputBorder(
@@ -382,6 +395,7 @@ class _New_sellState extends State<New_sell> {
                       margin: EdgeInsets.symmetric(horizontal: 20),
                       alignment: Alignment.center,
                       child: TextField(
+                        controller: Money,
                         decoration: InputDecoration(
                             labelText: "Money",
                             border: OutlineInputBorder(
@@ -496,21 +510,6 @@ class _New_sellState extends State<New_sell> {
                     )
                   ])
             ])),
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          height: 40.h,
-          width: 300.w,
-          alignment: Alignment.center,
-          margin: EdgeInsets.symmetric(horizontal: 80),
-          child: TextField(
-            decoration: InputDecoration(
-                labelText: "Discount",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10))),
-          ),
-        ),
         SizedBox(
           height: 20,
         ),
@@ -522,21 +521,6 @@ class _New_sellState extends State<New_sell> {
           child: TextField(
             decoration: InputDecoration(
                 labelText: "Total",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10))),
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          height: 40.h,
-          width: 300.w,
-          alignment: Alignment.center,
-          margin: EdgeInsets.symmetric(horizontal: 80),
-          child: TextField(
-            decoration: InputDecoration(
-                labelText: "Pay",
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10))),
           ),
@@ -563,6 +547,32 @@ class _New_sellState extends State<New_sell> {
               style: TextStyle(
                   fontSize: 20, fontFamily: "itim", color: Colors.black),
             ),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: Row(
+            children: [
+              Text(
+                "You need to other's mortage ",
+                style: TextStyle(
+                    fontFamily: "itim", fontSize: 20, color: Colors.black),
+              ),
+              InkWell(
+                onTap: (() {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Big_mortage()));
+                }),
+                child: Text(
+                  "Click here",
+                  style: TextStyle(
+                      fontFamily: "itim", fontSize: 20, color: Colors.blue),
+                ),
+              ),
+            ],
           ),
         )
       ]),

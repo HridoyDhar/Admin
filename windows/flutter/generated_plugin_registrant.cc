@@ -6,9 +6,9 @@
 
 #include "generated_plugin_registrant.h"
 
-#include <printing/printing_plugin.h>
+#include <split_screen_menu/split_screen_menu_plugin.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
-  PrintingPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("PrintingPlugin"));
+  SplitScreenMenuPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("SplitScreenMenuPlugin"));
 }

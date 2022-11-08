@@ -5,10 +5,12 @@
 import FlutterMacOS
 import Foundation
 
-import path_provider_macos
-import printing
+import firebase_auth
+import firebase_core
+import split_screen_menu
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  PathProviderPlugin.register(with: registry.registrar(forPlugin: "PathProviderPlugin"))
-  PrintingPlugin.register(with: registry.registrar(forPlugin: "PrintingPlugin"))
+  FLTFirebaseAuthPlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseAuthPlugin"))
+  FLTFirebaseCorePlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseCorePlugin"))
+  SplitScreenMenuPlugin.register(with: registry.registrar(forPlugin: "SplitScreenMenuPlugin"))
 }

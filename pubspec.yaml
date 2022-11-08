@@ -36,23 +36,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^5.5.4
-  images_picker: ^1.2.11
-  pdf: ^3.8.4
-  path_provider: ^2.0.11
-  printer: ^0.0.5
-  printing: ^5.9.3
-  image_picker: ^0.8.6
-  document_provider: ^0.0.2
+  
   date_time: ^0.8.0
-  flutter_printer: ^2.0.3
-  image_size_getter: ^2.1.2
+  splash_screen_view: ^3.0.0
+  firebase_auth: ^4.1.1
+  firebase_core: ^2.1.1
+  google_sign_in: ^5.4.2
   provider: ^6.0.4
-  back_button_interceptor: ^6.0.2
-  document_scanner: ^0.2.1
-  document_scanner_flutter: ^0.2.7
-  flutter_full_pdf_viewer: ^1.0.6
-  flutter_isolate: ^2.0.3
-  flutter_share: ^2.0.0
+  split_screen_menu: ^0.0.2
+ 
+
 
 dev_dependencies:
   flutter_test:
